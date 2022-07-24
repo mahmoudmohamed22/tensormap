@@ -19,9 +19,11 @@ class NewFile extends Component {
         this.setState({fileType:'', fileName:'', file: null, uploadButtonDisabledStatus: true});
     };
 
-
+     //select fileTypes dataset
     fileTypes = [
-        { key: 'csv', text: 'CSV', value: 'csv' }
+        { key: 'csv', text: 'CSV', value: 'csv' },
+        { key: 'zip', text: 'ZIP', value: 'zip' },
+        { key: 'rar', text: 'RAR', value: 'rar' }
     ]
 
     dataTypeHandler = (event,val) => {
@@ -143,13 +145,27 @@ class NewFile extends Component {
                             </Button.Content>
                             <Button.Content hidden>{strings.UPLOAD_HIDDEN_BUTTON_CONTEXT}</Button.Content>
                         </Button>
-                        <input
+                        {/* <input
                             type="file"
                             id="file"
                             accept=".csv"
                             hidden
                             onChange={this.fileChange}
+                        /> */}
+                         <input
+                            type="file"
+                            id="file"
+                            accept=".zip"
+                            hidden
+                            onChange={this.fileChange}
                         />
+                         {/* <input
+                            type="file"
+                            id="file"
+                            accept=".rar"
+                            hidden
+                            onChange={this.fileChange}
+                        /> */}
 
                         <Form.Input
                             fluid
